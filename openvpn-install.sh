@@ -477,7 +477,7 @@ ifconfig-pool-persist ipp.txt" >> /etc/openvpn/server.conf
 		echo 'push "dhcp-option DNS 77.88.8.1"' >> /etc/openvpn/server.conf
 		;;
 	esac
-	if [ "$REDIRECT" = 'y' ]
+	if [[ "$REDIRECT" = 'y' ]]; then
 		echo 'push "redirect-gateway def1 bypass-dhcp" '>> /etc/openvpn/server.conf
 	fi
 echo "crl-verify crl.pem
