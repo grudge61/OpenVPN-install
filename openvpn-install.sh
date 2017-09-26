@@ -213,6 +213,8 @@ else
 	echo "Which private IP do you want for your VPN?"
 	read -p "Private IP address: " -e -i 10.8.0.0 PRIVATE_IP
 	echo ""
+	read -p "Do you want to tunnel all traffic through VPN? [y/N] " -e -i N REDIRECT
+	echo ""
 	echo "What protocol do you want for OpenVPN?"
 	echo "Unless UDP is blocked, you should not use TCP (unnecessarily slower)"
 	while [[ $PROTOCOL != "UDP" && $PROTOCOL != "TCP" ]]; do
@@ -475,7 +477,9 @@ ifconfig-pool-persist ipp.txt" >> /etc/openvpn/server.conf
 		echo 'push "dhcp-option DNS 77.88.8.1"' >> /etc/openvpn/server.conf
 		;;
 	esac
-echo 'push "redirect-gateway def1 bypass-dhcp" '>> /etc/openvpn/server.conf
+	if [ "$REDIRECT" = 'y' ]
+		echo 'push "redirect-gateway def1 bypass-dhcp" '>> /etc/openvpn/server.conf
+	fi
 echo "crl-verify crl.pem
 ca ca.crt
 cert server.crt
