@@ -12,7 +12,6 @@ Here is a preview of the installer :
 
 **You have to enable the TUN module otherwise OpenVPN won't work.** Ask your host if you don't know how to do it. If the TUN module is not enabled, the script will warn you and exit.
 
-You can get a cheap VPS to run this script for $2.50/month worldwide at [Vultr](https://goo.gl/Xyd1Sc) or 3€/month for unlimited bandwidth in France at [PulseHeberg](https://goo.gl/oBhgaj).
 
 First, get the script and make it executable :
 
@@ -36,9 +35,9 @@ When OpenVPN is installed, you can run the script again, and you will get the ch
 
 ## Why make a fork ?
 
-This script is based on the great work of [Nyr and its contributors](https://github.com/Nyr/openvpn-install).
+This script is based on the great work of [Nyr and its contributors](https://github.com/Nyr/openvpn-install) and [Angristan] (https://github.com/Angristan/OpenVPN-install).
 
-I made it because I wanted to have a more secured OpenVPN out-of-the-box. It works like the original script, but is more focused on privacy and espicially better encryption. Nyr's original script uses mainly default parameters regarding encryption, and some of them are unsecure. See [#encryption](#encryption).
+I made it because I wanted to have a more flexbile OpenVPN out-of-the-box. It works like the original script and the forked one, but is more focused on privacy and espicially better encryption. Nyr's original script uses mainly default parameters regarding encryption, and some of them are unsecure. See [#encryption](#encryption).
 
 Also, Nyr and myself clearly have not the same point of view regarding this script, that's why it's a fork.
 
